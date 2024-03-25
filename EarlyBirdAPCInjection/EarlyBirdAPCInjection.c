@@ -142,7 +142,7 @@ BOOL CreateSuspendedProcess2(LPCSTR lpProcessName, DWORD* dwProcessId, HANDLE* h
     //create the target process path for CreateProcessA
     //example: if windir is C:\Windows, it will look for TARGET_PROCESS in C:\Windows\system32
     sprintf(lpPath, "%s\\System32\\%s", WnDr, lpProcessName);
-    printf("\n\t[i] Running: \"%s\"...", lpPath);
+    //printf("\n\t[i] Running: \"%s\"...", lpPath);
 
     //create the process with DEBUG_PROCESS
     if (!CreateProcessA(NULL, lpPath, NULL, NULL, FALSE, DEBUG_PROCESS, NULL, NULL, &Si, &Pi)) {

@@ -9,3 +9,5 @@
 7. **AESCRTSleep** - CRT injection with AES encrypted payload, sleeping for random seconds before injection
 8. **XORCRTInj** - CRT injection with XORed payload with encryption program
 9. **NtAPIXOR** - Using Native API for process injection (C#)
+10. **XORProcessHypnosis** - using Process Hypnosis technique with XORed payload
+

@@ -10,4 +10,5 @@
 8. **XORCRTInj** - CRT injection with XORed payload with encryption program
 9. **NtAPIXOR** - Using Native API for process injection (C#)
 10. **XORProcessHypnosis** - using Process Hypnosis technique with XORed payload
+11. **ProcessHypnosisStaged** - using Process Hypnosis technique with staged payload
 

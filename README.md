@@ -11,4 +11,5 @@
 9. **NtAPIXOR** - Using Native API for process injection (C#)
 10. **XORProcessHypnosis** - using Process Hypnosis technique with XORed payload
 11. **ProcessHypnosisStaged** - using Process Hypnosis technique with staged payload
+12. **XORProcessHypnosisStaged** - using Process Hypnosis technique with XORed staged payload and key
 

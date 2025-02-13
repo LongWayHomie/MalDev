@@ -12,4 +12,5 @@
 10. **XORProcessHypnosis** - using Process Hypnosis technique with XORed payload
 11. **ProcessHypnosisStaged** - using Process Hypnosis technique with staged payload
 12. **XORProcessHypnosisStaged** - using Process Hypnosis technique with XORed staged payload and key
+13. **EarlyBirdAPCInjectionStagedSpoofControl** - using Early Bird technique with staged, encoded payload, execution control and PPID spoofing
 

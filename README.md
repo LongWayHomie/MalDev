@@ -14,4 +14,5 @@
 12. **XORProcessHypnosisStaged** - using Process Hypnosis technique with XORed staged payload and key
 13. **EarlyBirdAPCInjectionStagedSpoofControl** - using Early Bird technique with staged, encoded payload, execution control and PPID spoofing
 14. **ProcessHypnosisStagedObfuscated** - Process Hypnosis with staged payload, basic evasion, execution control, API hashing, custom GMH/GPA func.
+15. **EarlyBirdAPCEvasion** - using Early Bird technique with staged payload, API hashing, API emulation, PPID spoofing etc.
 

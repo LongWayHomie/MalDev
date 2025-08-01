@@ -22,4 +22,5 @@ int CheckDebuggerPresence();
 int CheckApiEmulation1();
 int CheckApiEmulation2();
 int CheckExecControl();
-void InitEvasion();
+int APIHammering(DWORD dwStress);
+int InitEvasion();

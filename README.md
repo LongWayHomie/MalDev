@@ -21,4 +21,5 @@ This repo is for educational purposes only. Use at your own risk.
 16. **EarlyBirdAPCInjectionSyscalls** - using Early Bird technique with staged payload and syscalls
 17. **HGRemoteMappingInjection** - remote mapping injection using HellsGate technique
 18. **DLL-ProcessHypnosisEv** - using Process Hypnosis technique in DLL library with XORed shellcode and evasion measures
+19. **SysWhispRemoteMappingInjection** - remote mapping injection with syscalls using SysWhispers3 and some evasion measures
 

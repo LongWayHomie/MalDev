@@ -22,4 +22,5 @@ This repo is for educational purposes only. Use at your own risk.
 17. **HGRemoteMappingInjection** - remote mapping injection using HellsGate technique
 18. **DLL-ProcessHypnosisEv** - using Process Hypnosis technique in DLL library with XORed shellcode and evasion measures
 19. **SysWhispRemoteMappingInjection** - remote mapping injection with syscalls using SysWhispers3 and some evasion measures
+20. **APCInjection-IndirectSyscalls** - APC injection with indirect syscalls using HellsHall technique and XORed payload
 

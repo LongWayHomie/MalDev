@@ -1,7 +1,7 @@
-﻿# MalDev
+﻿# Collection of Loaders - MalDev
 This is basically a collection of loaders I have been doing as a side project to implement most of the things I'm learning while doing MalDevAcademy stuff. Most of these loaders work "out of the box", but testing included only using them with Metasploit Framework. 
 Since I'm not a master of C or C# at all, I guess you may come across some absurd and confusing code. I was just trying to make things work so... (✌ﾟ∀ﾟ)☞
-This repo is for educational purposes only. Use at your own risk.
+This repo is for educational purposes only. PLEASE do no harm with it. Use at your own risk.
 
 1. **ProcInjShellcodeInternetAPI** - remote process injection via CRT with staged payload (downloaded from server).
 2. **ProcInjShellcodeNtQuerySystemInfo** - remote process injection via CRT with IPv6-obfuscated payload and NtQuerySystemInformation syscall to enumerate processes.
@@ -23,4 +23,5 @@ This repo is for educational purposes only. Use at your own risk.
 18. **DLL-ProcessHypnosisEv** - using Process Hypnosis technique in DLL library with XORed shellcode and evasion measures
 19. **SysWhispRemoteMappingInjection** - remote mapping injection with syscalls using SysWhispers3 and some evasion measures
 20. **APCInjection-IndirectSyscalls** - APC injection with indirect syscalls using HellsHall technique and XORed payload
+
 

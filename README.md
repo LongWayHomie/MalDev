@@ -6,7 +6,7 @@ This repo is for educational purposes only. PLEASE do no harm with it. Use at yo
 | No. | Loader Name | Encryption | Evasion Measures | Description |
 |:---|:---|:---:|:---|:---|
 | 1 | ProcInjShellcodeInternetAPI | None | • Remote injection<br>• Staged payload<br>• CRT | Remote process injection via CRT with staged payload (downloaded from server) |
-| 2 | ProcInjShellcodeNtQuerySystemInfo | None | • IPv6 obfuscation<br>• NtQuerySystemInformation syscall<br>• Process Enumeration | Remote process injection via CRT with IPv6-obfuscated payload and NtQuerySystemInformation syscall to enumerate processes |
+| 2 | ProcInjShellcodeNtQuerySystemInfo | None | • IPv6 obfuscation<br>• Direct syscall usage<br>• Process Enumeration | Remote process injection via CRT with IPv6-obfuscated payload and NtQuerySystemInformation syscall to enumerate processes |
 | 3 | ThreadHijackIPv6Obf | None | • Thread hijacking<br>• IPv6 obfuscation | Remote process thread hijacking with IPv6-obfuscated payload |
 | 4 | RC4APCInjection | RC4 | • APC injection<br>• Alertable Thread | APC injection via alertable sacificial thread with RC4 encrypted shellcode |
 | 5 | EarlyBirdAPCInjection | None | • Early Bird technique<br>• Using debugged state<br>• Staged payload | Early Bird APC Injection using debugged state with staged shellcode |

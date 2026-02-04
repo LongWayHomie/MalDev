@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36915.13 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreshyCalls-RemoteMappingInjection", "FreshyCalls-RemoteMappingInjection.csproj", "{DC54BAED-065C-4023-A6CD-16A80AE93F7A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC54BAED-065C-4023-A6CD-16A80AE93F7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC54BAED-065C-4023-A6CD-16A80AE93F7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC54BAED-065C-4023-A6CD-16A80AE93F7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC54BAED-065C-4023-A6CD-16A80AE93F7A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {977EBDE6-118A-40A0-AC10-6646E6827A4F}
+	EndGlobalSection
+EndGlobal
